@@ -1,5 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://cqaqtmi7rmjt7"]
+[gd_scene load_steps=9 format=3 uid="uid://cqaqtmi7rmjt7"]
 
+[ext_resource type="Script" path="res://scenes/main.gd" id="1_46xat"]
 [ext_resource type="PackedScene" uid="uid://by1hctbvh54ij" path="res://scenes/character_body_3d.tscn" id="1_yrgkt"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7iiv3"]
@@ -24,6 +25,8 @@ size = Vector3(40.1223, 0.131348, 39.8281)
 [sub_resource type="BoxMesh" id="BoxMesh_auh01"]
 
 [node name="Main" type="Node3D"]
+process_mode = 3
+script = ExtResource("1_46xat")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
@@ -47,3 +50,21 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.55796, -11.4414)
 mesh = SubResource("BoxMesh_auh01")
 
 [node name="CharacterBody3D" parent="." instance=ExtResource("1_yrgkt")]
+process_mode = 1
+
+[node name="Pausemenu" type="Node3D" parent="."]
+process_mode = 3
+visible = false
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Pausemenu"]
+visible = false
+offset_left = 916.0
+offset_top = 380.0
+offset_right = 1065.0
+offset_bottom = 449.0
+
+[node name="Exit game" type="Button" parent="Pausemenu/VBoxContainer"]
+layout_mode = 2
+text = "Exit Game"
+
+[connection signal="pressed" from="Pausemenu/VBoxContainer/Exit game" to="." method="_on_exit_game_pressed"]

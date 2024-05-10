@@ -18,7 +18,7 @@ var cameraLookInput :Vector2
 
 func _ready():
 	camera.rotation = Vector3(0,0,0) 
-	
+	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	
 func _physics_process(delta):
 	if not is_on_floor():# gravity
@@ -40,6 +40,7 @@ func _physics_process(delta):
 	camera.rotation.x = clamp(camera.rotation.x,-0.5,.5)
 	
 	cameraLookInput = Vector2.ZERO # this resets the camera input each frame
+	
 func _unhandled_input(event):
 	if event is InputEventMouseMotion:
 		cameraLookInput = event.relative
