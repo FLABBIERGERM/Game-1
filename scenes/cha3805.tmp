@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://by1hctbvh54ij"]
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_stka4"]
-[ext_resource type="Texture2D" uid="uid://c6fq5pnddgjld" path="res://Images/New Piskel (2).png" id="2_3fojl"]
+[ext_resource type="Texture2D" uid="uid://bovly03f1c3bl" path="res://scenes/New Piskel (1).png" id="2_fupwv"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_gpb64"]
 
@@ -29,17 +29,9 @@ grow_vertical = 2
 mouse_filter = 1
 
 [node name="TextureRect" type="TextureRect" parent="Camera3D/Control"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(2, 2)
-texture = ExtResource("2_3fojl")
+layout_mode = 0
+offset_left = 845.0
+offset_top = 458.0
+offset_right = 1101.0
+offset_bottom = 714.0
+texture = ExtResource("2_fupwv")

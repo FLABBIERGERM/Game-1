@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cqaqtmi7rmjt7"]
+[gd_scene load_steps=8 format=3 uid="uid://cqaqtmi7rmjt7"]
 
 [ext_resource type="PackedScene" uid="uid://by1hctbvh54ij" path="res://scenes/character_body_3d.tscn" id="1_yrgkt"]
 
@@ -21,6 +21,8 @@ size = Vector3(40.1223, 0.131348, 39.8281)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_t662v"]
 
+[sub_resource type="BoxMesh" id="BoxMesh_auh01"]
+
 [node name="Main" type="Node3D"]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
@@ -39,5 +41,9 @@ shape = SubResource("BoxShape3D_2gbyd")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Floor"]
 transform = Transform3D(20, 0, 0, 0, 1, 0, 0, 0, 20, 0, 0, 0)
 mesh = SubResource("PlaneMesh_t662v")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.55796, -11.4414)
+mesh = SubResource("BoxMesh_auh01")
 
 [node name="CharacterBody3D" parent="." instance=ExtResource("1_yrgkt")]

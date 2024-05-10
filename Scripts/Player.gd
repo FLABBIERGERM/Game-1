@@ -9,11 +9,10 @@ extends CharacterBody3D
 
 #camera
 @export_category("Camera")
-@export var lookSensitivity = 0.005
+@export var lookSensitivity = .005
 var cameraLookInput :Vector2
 
 @onready var camera : Camera3D = $Camera3D 
-
 @onready var gameGravity = ProjectSettings.get_setting("physics/3d/default_gravity") * gravityModifer 
 
 
@@ -34,7 +33,10 @@ func _physics_process(delta):
 	velocity.z = moveDir.z * moveSpeed
 	move_and_slide()
 	
-	rotate_y(-cameraLookInput.y * lookSensitivity)
+	rotate_y(-cameraLookInput.x * lookSensitivity)
+	cameraLookInput.y = -cameraLookInput.y
+	camera.rotate_x(cameraLookInput.y * lookSensitivity)
+	
 	camera.rotation.x = clamp(camera.rotation.x,-0.5,.5)
 	
 	cameraLookInput = Vector2.ZERO # this resets the camera input each frame
