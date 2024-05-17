@@ -37,7 +37,7 @@ func _physics_process(delta):
 	cameraLookInput.y = -cameraLookInput.y
 	camera.rotate_x(cameraLookInput.y * lookSensitivity)
 	
-	camera.rotation.x = clamp(camera.rotation.x,-0.5,.5)
+	camera.rotation.x = clamp(camera.rotation.x,-1,1)
 	
 	cameraLookInput = Vector2.ZERO # this resets the camera input each frame
 	
