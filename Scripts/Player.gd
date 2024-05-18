@@ -15,10 +15,16 @@ var cameraLookInput :Vector2
 @onready var camera : Camera3D = $Camera3D 
 @onready var gameGravity = ProjectSettings.get_setting("physics/3d/default_gravity") * gravityModifer 
 
+@onready var gun_barrel = $Camera3D/untitled/RayCast3D
+var score = 0
+
+var bullet = load("res://bullet.tscn")
+var instance 
 
 func _ready():
 	camera.rotation = Vector3(0,0,0) 
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	get_node("/root/Main/weird spider 1")
 	
 func _physics_process(delta):
 	if not is_on_floor():# gravity
@@ -41,10 +47,13 @@ func _physics_process(delta):
 	
 	cameraLookInput = Vector2.ZERO # this resets the camera input each frame
 	
+	if Input.is_action_just_released("Attack"):
+		instance = bullet.instantiate()
+		instance.position = gun_barrel.global_position
+		instance.transform.basis = gun_barrel.global_transform.basis
+		get_parent().add_child(instance)
+func increment_score(value):
+	score += value	
 func _unhandled_input(event):
 	if event is InputEventMouseMotion:
 		cameraLookInput = event.relative
-		
-	
-	
-

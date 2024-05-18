@@ -1,0 +1,49 @@
+[gd_scene load_steps=2 format=3 uid="uid://hrs3qtrywoe4"]
+
+[ext_resource type="PackedScene" uid="uid://cvo1omo76tat7" path="res://Models/untitled.glb" id="1_xcxnk"]
+
+[node name="untitled" instance=ExtResource("1_xcxnk")]
+process_mode = 1
+
+[node name="Sphere_001" parent="." index="0"]
+transform = Transform3D(-1.98011e-07, 1.92419e-05, 0.0525229, -0.0443507, -0.000975407, -1.24644e-12, 0.000667223, -0.0648362, 1.55874e-05, 0.00404228, 10.3184, 0.305271)
+
+[node name="Plane_001" parent="." index="1"]
+transform = Transform3D(-5.44678e-06, -0.0194942, 0, 0, 0, 0.0119404, 0.0183538, -5.78523e-06, 0, 0.0134615, 10.3003, -0.119088)
+
+[node name="Cylinder_015" parent="." index="2"]
+transform = Transform3D(4.33116e-06, 0, 0.0114127, 0, 0.00102776, 0, -0.0145942, 0, 3.38699e-06, 0.00395542, 10.2739, 0.404939)
+
+[node name="Cylinder_014" parent="." index="3"]
+transform = Transform3D(-2.05558e-05, 0, -0.0541659, 0, -0.0450621, 0, 0.0692654, 0, -1.60746e-05, 0.00401102, 10.1345, 0.551177)
+
+[node name="Cylinder_013" parent="." index="4"]
+transform = Transform3D(0, 4.36195e-06, 0.00887372, -0.00956206, 0, 0, 0, -0.014698, 2.63353e-06, 0.00478694, 10.3165, -0.549238)
+
+[node name="Cylinder_012" parent="." index="5"]
+transform = Transform3D(0, -2.32405e-05, -0.00701407, 0.0116078, 0, 0, 0, 0.0783123, -2.08151e-06, 0.00430711, 10.287, 0.00133065)
+
+[node name="Cylinder_011" parent="." index="6"]
+transform = Transform3D(0, 2.60336e-05, 0.0686003, -0.0570702, 0, 0, 0, -0.0877235, 2.03582e-05, 0.00409761, 10.3196, 0.241701)
+
+[node name="Cylinder_010" parent="." index="7"]
+transform = Transform3D(-1.6507e-06, 0, -0.00434966, 0, -0.0036186, 0, 0.00556218, 0, -1.29085e-06, 0.0048126, 10.3707, -0.578745)
+
+[node name="Cylinder_009" parent="." index="8"]
+transform = Transform3D(0, -7.22887e-06, -0.011215, 0.0127632, 0, 0, 0, 0.0243585, -3.32823e-06, 0.00338207, 10.3161, 0.106617)
+
+[node name="Cylinder_008" parent="." index="9"]
+transform = Transform3D(-0.018617, 1.08939e-05, 0.0148349, -0.0460786, -4.34331e-09, -0.0059937, -5.52047e-06, -0.0367123, 4.40233e-06, 0.00481124, 10.3479, -0.577179)
+
+[node name="Cube_006" parent="." index="10"]
+transform = Transform3D(5.2797e-06, 0, 0.0267616, 0, 0.0115742, 0, -0.0177909, 0, 7.94214e-06, -0.00351556, 10.2215, 0.23331)
+
+[node name="Cube_005" parent="." index="11"]
+transform = Transform3D(5.70712e-06, 0, 0.0150388, 0, 0.0125112, 0, -0.0192311, 0, 4.46304e-06, 0.00480814, 10.3192, -0.57362)
+
+[node name="Cube_004" parent="." index="12"]
+transform = Transform3D(1.6421e-06, 0, 0.0176569, 0, 0.00822756, 0, -0.00553331, 0, 5.23997e-06, 0.00422101, 10.2638, 0.100131)
+
+[node name="RayCast3D" type="RayCast3D" parent="." index="13"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00697753, 10.3574, -0.602468)
+target_position = Vector3(0, 0, -1)

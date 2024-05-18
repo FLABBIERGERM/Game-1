@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://by1hctbvh54ij"]
+[gd_scene load_steps=5 format=3 uid="uid://by1hctbvh54ij"]
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_stka4"]
 [ext_resource type="Texture2D" uid="uid://c6fq5pnddgjld" path="res://Images/New Piskel (2).png" id="2_3fojl"]
+[ext_resource type="PackedScene" uid="uid://hrs3qtrywoe4" path="res://gun.tscn" id="3_k210p"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_gpb64"]
 
@@ -16,7 +17,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.110092, 0)
 shape = SubResource("CapsuleShape3D_gpb64")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.729135, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00457096, 0.720491, 0.00887871)
 current = true
 
 [node name="Control" type="Control" parent="Camera3D"]
@@ -43,3 +44,6 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(2, 2)
 texture = ExtResource("2_3fojl")
+
+[node name="untitled" parent="Camera3D" instance=ExtResource("3_k210p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.630009, -10.6249, -0.987988)

@@ -1,23 +1,37 @@
 extends CharacterBody3D
 
+var score = 0
+const SPEED = 5.0
+var player = null
+var health = 3
+@export var damage: = 1
+@export var player_path := "/root/Main/player1"
+@onready var nav_agent = $NavigationAgent3D
+signal body_hit(damage)
+signal kill(eins)
 
-const SPEED = 1.0
-var hero
-@export var turn_speed = 2.0
+@export var eins =  1
 
 func _ready():
-	hero = get_tree().get_nodes_in_group("Player")[0]
+	player = get_node(player_path)
 
 
 func _physics_process(delta):
-	$FaceDirection.look_at(hero.global_transform.origin,Vector3.UP)
-	rotate_y(deg_to_rad($FaceDirection.rotation.y * turn_speed))
+	velocity = Vector3.ZERO
+	#nav
+	nav_agent.set_target_position(player.global_transform.origin)
+	var next_nav_point = nav_agent.get_next_path_position()
+	velocity = (next_nav_point - global_transform.origin).normalized() * SPEED
 	
 	
-	
-	$NavigationAgent3D.set_target_position(hero.global_transform.origin)
-	var velocity = ($NavigationAgent3D.get_next_path_position() - transform.origin).normalized() * SPEED * delta
+	look_at(Vector3(player.global_position.x, global_position.y ,player.global_position.z),Vector3.UP)
 	
 	
-	move_and_collide(velocity)
-	
+	move_and_slide()
+
+func hit():
+	emit_signal("body_hit", damage)
+	health -= damage  
+	if health <= 0:
+		emit_signal("kill",eins)
+		queue_free()
