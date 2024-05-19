@@ -2,7 +2,7 @@ extends Node3D
 
 var score = 0
 
-@onready var label = $Control/Label
+
 @onready var spawns = $spawnholder
 @onready var navigation_region = $NavigationRegion3D
 # Called when the node enters the scene tree for the first time.
@@ -40,9 +40,6 @@ func _on_spawn_timer_timeout():
 	instance = spider.instantiate()
 	instance.position =  spawn_point
 	navigation_region.add_child(instance)
+	
 
 
-func _on_weird_spider_1_kill(eins):
-	var new_score = 0
-	new_score += eins
-	label.text = "Score: " + str(new_score) 

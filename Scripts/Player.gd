@@ -4,7 +4,7 @@ extends CharacterBody3D
 @export var maxSpeed = 4.0
 
 @export_category("Jumping")
-@export var jumpForce = 5.0
+@export var jumpForce = 15.0
 @export var gravityModifer = 1.5
 
 #camera

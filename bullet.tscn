@@ -34,7 +34,7 @@ transform = Transform3D(0, -2.10235e-05, 0.0499304, -0.0398303, 0, 0, 0, -0.0029
 surface_material_override/0 = SubResource("StandardMaterial3D_6hpi8")
 
 [node name="RayCast3D" type="RayCast3D" parent="." index="2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.72853e-06, -0.000665568, -0.176755)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 2.47308, 1.72853e-06, -0.000665568, 1.28626)
 target_position = Vector3(0, 0, -1)
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="." index="3"]
