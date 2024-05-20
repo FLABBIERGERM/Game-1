@@ -6,6 +6,8 @@ var health = 3
 @export var player_path := "/root/Main/player"
 @onready var nav_agent = $NavigationAgent3D
 signal body_hit(damage)
+signal doom()
+
 
 @export var eins =  1
 
@@ -21,12 +23,11 @@ func _physics_process(delta):
 	velocity = (next_nav_point - global_transform.origin).normalized() * SPEED
 	
 	look_at(Vector3(player.global_position.x, global_position.y ,player.global_position.z),Vector3.UP)
-	
-	
 	move_and_slide()
 func hit():
 	emit_signal("body_hit", damage)
 	health -= damage  
 	print("Hit")
 	if health <= 0:
+		emit_signal("doom")
 		queue_free()

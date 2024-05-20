@@ -40,6 +40,7 @@ target_position = Vector3(0, 0, -1)
 [node name="GPUParticles3D" type="GPUParticles3D" parent="." index="3"]
 transform = Transform3D(-0.00846476, 0, 0.999964, 0, 1, 0, -0.999964, 0, -0.00846476, 0, -0.00645667, -1.18407)
 material_override = SubResource("StandardMaterial3D_3fm0j")
+amount = 12
 explosiveness = 1.0
 visibility_aabb = AABB(-0.0673826, -0.284915, -0.175044, 0.134765, 0.455572, 0.350089)
 process_material = SubResource("ParticleProcessMaterial_iep8p")

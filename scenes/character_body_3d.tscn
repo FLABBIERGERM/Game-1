@@ -46,4 +46,4 @@ scale = Vector2(2, 2)
 texture = ExtResource("2_3fojl")
 
 [node name="untitled" parent="Camera3D" instance=ExtResource("3_k210p")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.630009, -10.6249, -0.987988)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.523743, -10.7252, -1.18882)
